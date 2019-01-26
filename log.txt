@@ -1,0 +1,15 @@
+-------------
+CHANGES LOG
+-------------
+
+Jan 14-Jan 24
+-heading
+-picture of me
+-blurb about me
+-link to github
+-link to resume
+
+
+Jan 25
+-resized picture of me
+-added page title
