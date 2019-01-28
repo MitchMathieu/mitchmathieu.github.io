@@ -13,3 +13,9 @@ Jan 14-Jan 24
 Jan 25
 -resized picture of me
 -added page title
+
+Jan 28
+-added CSS! 
+-centered all elements on the page (somehow this was more difficult than expected)
+	Centered the image with text-align
+	Centered the paragraph of text by setting width = 50% and L/R margins = 25%
