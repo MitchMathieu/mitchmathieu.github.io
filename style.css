@@ -2,6 +2,11 @@ body {
 	padding-top: 70px;
 }
 
+.flex {
+	display: flex;
+	flex-wrap: wrap;
+}
+
 .navbar-inverse .navbar-nav>li>a {
 	color: white;
 	font-size: 1.75em;
@@ -12,46 +17,9 @@ body {
 	font-size: 2.5em;
 }
 
-#header {
-	width: 40%;
-	font-size: 30px;
-}
-
-table {
-	width: 50%;
-	margin:auto;
-	font-size: 25px;
-	font-weight: 400;
-	text-align: center;
-}
-
-#header, #links {
-	display: inline-block;
-}
-
-.sub-heading {
-	border-top: 2px solid black;
-	padding-top: 20px;
-	font-size: 30px;
-}
-
-.blurb {
-	font-size: 20px;
-	width: 50%;
-}
-
-td {
-	width: 200px;
-}
-
-td[id="left"] {
-	border-left: 2px solid black;
-	border-right: 2px solid black;
-}
-
-td[id="right"] {
-	border-left: 2px solid black;
-	border-right: 2px solid black;
+.jumbotron .img-circle {
+	height: 140px;
+	.width: 140px;
 }
 
 .footer {
