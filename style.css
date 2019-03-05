@@ -1,5 +1,15 @@
 body {
-	font-family: Arial;
+	padding-top: 70px;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+	color: white;
+	font-size: 1.75em;
+}
+
+.navbar-inverse .navbar-brand {
+	color: white;
+	font-size: 2.5em;
 }
 
 #header {
