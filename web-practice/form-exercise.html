@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>form exercise</title>
+</head>
+<body>
+	<h1>Register</h1>
+
+	<form>
+		<label for="fname">First Name:</label>
+		<input id="fname" type="text" placeholder="John" required>
+
+		<label for="lname">Last Name:</label>
+		<input id="lname" type="text" placeholder="Smith" required>
+
+		<br>
+		
+		<label for="male">Male</label>
+		<input id="male" type="radio" name="gender" value="male">
+
+		<label for="female">Female</label>
+		<input id="female" type="radio" name="gender" value="female">
+
+		<label for="other">Other</label>
+		<input id="other" type="radio" name="gender" value="other">
+
+		<br>
+
+		<label for="email">Email</label>
+		<input id="email" type="Email" name="email" required>
+
+		<label for="password">Password</label>
+		<!-- <input id="password" type="password" name="pword" minlength="5" maxlength="10" required> -->
+		<input type="password" name="pword" pattern=".{5,10}" required title="pword must be 5 to 10 characters">
+
+		<br>
+
+		<label for="bday">Birthday</label>
+		<select id="bday">
+			<option value="" disabled selected>Month</option>
+			<option value="april">April</option>
+		</select>
+
+		<select id="bday">
+			<option value="" disabled selected>Day</option>
+			<option value="5">05</option>
+		</select>
+
+		<select id="bday">
+			<option value="" disabled selected>Year</option>
+			<option value="1995">1995</option>
+		</select>
+
+		<br>
+
+		<label for="sign">Say hello to your FBI agent</label>
+		<input id="sign" type="checkbox" name="agree"value="signed" required>
+
+		<br>
+
+		<input type="submit">
+
+	</form>
+
+	<!-- I used a lot of <br> tags but could/should have used div tags
+	     oh well, next time -->
+
+</body>
+</html>
