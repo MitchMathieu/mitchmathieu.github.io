@@ -15,6 +15,7 @@ body {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	font-family: 'Nunito Sans', sans-serif;
 }
 
 #job-title {
@@ -22,6 +23,7 @@ body {
 	top: calc(50% + 1em);
 	left: 50%;
 	transform: translateX(-50%);
+	font-family: 'Nunito Sans', sans-serif;
 }
 
 #name+#job-title {
