@@ -1,31 +1,56 @@
+html,
 body {
-	background-color: lightgrey;
-	margin: 10px;
-
+	margin: 0;
+	padding: 0;
+	height: 100%;
 }
 
-.frame_line {
+body {
+	background-color: #f5ebe0;
+}
+
+/* #main-text {
 	border: 1px solid black;
+	margin: 20px;
+	padding: 10px;
 	position: absolute;
-}
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	width: 400px;
+	height: 200px;
+} */
 
 #name {
 	text-align: center;
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -120%);
 	font-family: 'Nunito Sans', sans-serif;
 }
 
 #job-title {
 	position: absolute;
-	top: calc(50% + 1em);
+	top: 50%;
 	left: 50%;
-	transform: translateX(-50%);
+	transform: translate(-50%, -40%);
 	font-family: 'Nunito Sans', sans-serif;
 }
 
-#name+#job-title {
-	top: calc(50% + 2em);
+.socials {
+	color: black;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	/* transform: translateY(200%); */
+}
+
+.fa-linkedin {
+	transform: translate(-100%, 200%);
+}
+
+.fa-github {
+	transform: translate(100%, 200%);
 }
