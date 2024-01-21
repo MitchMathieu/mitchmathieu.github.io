@@ -48,9 +48,9 @@ body {
 }
 
 .fa-linkedin {
-	transform: translate(-100%, 200%);
+	transform: translate(-150%, 200%);
 }
 
 .fa-github {
-	transform: translate(100%, 200%);
+	transform: translate(50%, 200%);
 }
