@@ -1,2 +1,2 @@
 # mitchmathieu.github.io
-The homepage of the internet.
+The front page of the internet.
