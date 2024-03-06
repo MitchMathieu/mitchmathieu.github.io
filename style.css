@@ -32,3 +32,25 @@ p {
 .blink-cursor {
 	animation: blink 1s infinite;
 }
+
+.command {
+	margin-bottom: 2px;
+	margin-top: 2px;
+}
+
+#job-command {
+	display: none;
+}
+
+#name {
+	display: none;
+}
+
+#last-line {
+	display: none;
+}
+
+.socials {
+	font-size: 1rem;
+	display: none;
+}

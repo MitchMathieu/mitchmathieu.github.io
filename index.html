@@ -16,13 +16,27 @@
 </head>
 
 <body>
-    <div id="main-text">
-        <p id="name">> Mitch Mathieu</p>
-        <p id="job-title">> Software Developer</p>
-        <p id="">> <span class="blink-cursor">_</span></p>
-        <a href="https://github.com/MitchMathieu" target="_blank"> Github</a>
-        <a href="https://www.linkedin.com/in/mitchmathieu/" target="_blank">LinkedIn</a>
+    <div class="main-text">
+
+        <p class="command" id="name-command">
+            <span id="name-prompt">></span>
+            <span id="name">Mitch Mathieu</span><span id="name-cursor" class="blink-cursor">_</span>
+        </p>
+        <!-- <p id="name">Mitch Mathieu</p> -->
+
+        <p class="command" id="job-command">
+            <span id="job-prompt">></span>
+            <span id="job">Software Developer</span>
+            <!-- <span class="blink-cursor">_</span> -->
+        </p>
+        <p class="command" id="last-line">> <span class="blink-cursor">_</span></p>
+        <p class="socials">
+            <a href="https://github.com/MitchMathieu" target="_blank"> Github</a>
+            <a href="https://www.linkedin.com/in/mitchmathieu/" target="_blank">LinkedIn</a>
+        </p>
     </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
