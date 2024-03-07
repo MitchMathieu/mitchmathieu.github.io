@@ -38,7 +38,15 @@ p {
 	margin-top: 2px;
 }
 
-#job-command {
+#job-prompt {
+	display: none;
+}
+
+#job {
+	display: none;
+}
+
+#job-cursor {
 	display: none;
 }
 
@@ -46,11 +54,22 @@ p {
 	display: none;
 }
 
-#last-line {
+#last-prompt {
+	display: none;
+}
+
+#last-cursor {
+	display: none;
+}
+
+#github {
+	display: none;
+}
+
+#linkedin {
 	display: none;
 }
 
 .socials {
 	font-size: 1rem;
-	display: none;
 }

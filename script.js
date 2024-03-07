@@ -10,6 +10,25 @@ function typeWriter(elementId, text) {
         i = 0; // reset the counter for the next text
     }
 }
+
+function fadeIn(elementId, time) {
+    var element = document.getElementById(elementId);
+    element.style.opacity = 0;  // start from transparent
+    element.style.display = 'inline';  // make sure the element is displayed
+
+    var lastTime = Date.now();
+    var tick = function () {
+        element.style.opacity = +element.style.opacity + (Date.now() - lastTime) / time;
+        lastTime = Date.now();
+
+        if (+element.style.opacity < 1) {
+            (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
+        }
+    };
+
+    tick();
+}
+
 function showNamePrompt() {
     var text = document.getElementById('name-prompt').innerText;
     document.getElementById('name-prompt').innerText = '';
@@ -23,9 +42,31 @@ function typeName() {
 }
 
 function showJobTitlePrompt() {
-    var text = document.getElementById('job-prompt').innerText;
-    document.getElementById('job-prompt').innerText = '';
-    typeWriter('job-prompt', text);
+    document.getElementById('name-cursor').style.display = 'none'; // remove name cursor
+    document.getElementById('job-prompt').style.display = 'inline'; // show job title prompt
+    document.getElementById('job-cursor').style.display = 'inline'; // show job title cursor
+}
+
+function typeJobTitle() {
+    var jobText = document.getElementById('job').innerText;
+    document.getElementById('job').innerText = '';
+    typeWriter('job', jobText);
+}
+
+function showLastPrompt() {
+    document.getElementById('job-cursor').style.display = 'none'; // remove job title cursor
+    document.getElementById('last-prompt').style.display = 'inline'; // show last prompt
+    document.getElementById('last-cursor').style.display = 'inline'; // show last cursor
+}
+
+function showSocials() {
+    setTimeout(function () {
+        fadeIn('github', 2000);
+    }, 500);
+
+    setTimeout(function () {
+        fadeIn('linkedin', 2000);
+    }, 1500);
 }
 
 window.onload = function () {
@@ -37,5 +78,17 @@ window.onload = function () {
 
     setTimeout(function () {
         showJobTitlePrompt();
-    }, 500);
+    }, 5000);
+
+    setTimeout(function () {
+        typeJobTitle();
+    }, 7000);
+
+    setTimeout(function () {
+        showLastPrompt();
+    }, 11000);
+
+    setTimeout(function () {
+        showSocials();
+    }, 12000);
 };
