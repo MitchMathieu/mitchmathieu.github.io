@@ -73,3 +73,23 @@ p {
 .socials {
 	font-size: 1rem;
 }
+
+/* unvisited link */
+.socials a:link {
+	color: rgb(62, 199, 181);
+}
+
+/* visited link */
+.socials a:visited {
+	color: lightgray;
+}
+
+/* mouse over link */
+.socials a:hover {
+	color: lightgray;
+}
+
+/* selected link */
+.socials a:active {
+	color: lightgray;
+}
