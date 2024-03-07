@@ -5,7 +5,7 @@ function typeWriter(elementId, text) {
     if (i < text.length) {
         document.getElementById(elementId).innerHTML += text.charAt(i);
         i++;
-        setTimeout(function () { typeWriter(elementId, text); }, 150);
+        setTimeout(function () { typeWriter(elementId, text); }, 100);
     } else {
         i = 0; // reset the counter for the next text
     }
@@ -78,17 +78,17 @@ window.onload = function () {
 
     setTimeout(function () {
         showJobTitlePrompt();
-    }, 5000);
+    }, 4000);
 
     setTimeout(function () {
         typeJobTitle();
-    }, 7000);
+    }, 6000);
 
     setTimeout(function () {
         showLastPrompt();
-    }, 11000);
+    }, 9000);
 
     setTimeout(function () {
         showSocials();
-    }, 12000);
+    }, 10000);
 };
