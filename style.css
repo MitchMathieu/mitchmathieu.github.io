@@ -81,7 +81,7 @@ p {
 
 /* visited link */
 .socials a:visited {
-	color: lightgray;
+	color: rgb(62, 199, 181);
 }
 
 /* mouse over link */
