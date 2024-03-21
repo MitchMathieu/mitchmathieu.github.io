@@ -67,6 +67,10 @@ function showSocials() {
     setTimeout(function () {
         fadeIn('linkedin', 2000);
     }, 1500);
+
+    setTimeout(function () {
+        fadeIn('resume', 2000);
+    }, 2500);
 }
 
 window.onload = function () {

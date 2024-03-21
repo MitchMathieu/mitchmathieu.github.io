@@ -70,6 +70,10 @@ p {
 	display: none;
 }
 
+#resume {
+	display: none;
+}
+
 .socials {
 	font-size: 1rem;
 }
