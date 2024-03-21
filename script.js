@@ -74,25 +74,25 @@ function showSocials() {
 }
 
 window.onload = function () {
-    showNamePrompt();
+    // showNamePrompt();
 
-    setTimeout(function () {
-        typeName();
-    }, 2000);
+    // setTimeout(function () {
+    //     typeName();
+    // }, 2000);
 
-    setTimeout(function () {
-        showJobTitlePrompt();
-    }, 4000);
+    // setTimeout(function () {
+    //     showJobTitlePrompt();
+    // }, 4000);
 
-    setTimeout(function () {
-        typeJobTitle();
-    }, 6000);
+    // setTimeout(function () {
+    //     typeJobTitle();
+    // }, 6000);
 
-    setTimeout(function () {
-        showLastPrompt();
-    }, 9000);
+    // setTimeout(function () {
+    //     showLastPrompt();
+    // }, 9000);
 
-    setTimeout(function () {
-        showSocials();
-    }, 10000);
+    // setTimeout(function () {
+    //     showSocials();
+    // }, 10000);
 };

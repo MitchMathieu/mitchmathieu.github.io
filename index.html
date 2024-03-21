@@ -11,6 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
 
     <title>Mitch Mathieu</title>
 </head>
@@ -18,10 +21,10 @@
 <body>
     <div class="main-text">
 
-        <p class="command" id="name-command">
+        <!-- <p class="command" id="name-command">
             <span id="name-prompt">></span>
             <span id="name">Mitch Mathieu</span><span id="name-cursor" class="blink-cursor">_</span>
-        </p>
+        </p> -->
 
         <p class="command" id="job-command">
             <span id="job-prompt">></span>
@@ -37,6 +40,29 @@
             <a id="resume" href="mitchell-mathieu-resume.pdf" target="_blank">Resume</a>
         </p>
     </div>
+
+    <div id="terminal"></div>
+    <script>
+        $('#terminal').terminal(function (command) {
+            if (command !== '') {
+                try {
+                    var result = window.eval(command);
+                    if (result !== undefined) {
+                        this.echo(new String(result));
+                    }
+                } catch (e) {
+                    this.error(new String(e));
+                }
+            } else {
+                this.echo('');
+            }
+        }, {
+            greetings: 'Mitch Mathieu - software developer',
+            name: 'mitchs-pc',
+            height: 500,
+            prompt: 'mitchmathieu$ '
+        });
+    </script>
 
     <script src="script.js"></script>
 </body>
