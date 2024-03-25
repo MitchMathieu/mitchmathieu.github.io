@@ -3,97 +3,30 @@ body {
 }
 
 body {
-	background-color: #202124;
+	background-color: black;
 	color: white;
 }
 
-p {
-	font-size: 1.5em;
+#banner {
+	background-color: #6b6b6b;
+	color: #c7c7c7;
+	width: 100%;
+	height: 20px;
+	padding: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	text-align: center;
+	z-index: 100;
 }
 
-.main-text {
-	margin-left: 2px;
+#terminal {
+	margin-top: 20px;
 }
 
-@keyframes blink {
-	0% {
-		opacity: 1;
-	}
-
-	50% {
-		opacity: 0;
-	}
-
-	100% {
-		opacity: 1;
-	}
-}
-
-.blink-cursor {
-	animation: blink 1s infinite;
-}
-
-.command {
-	margin-bottom: 2px;
-	margin-top: 2px;
-}
-
-#job-prompt {
-	display: none;
-}
-
-#job {
-	display: none;
-}
-
-#job-cursor {
-	display: none;
-}
-
-#name {
-	display: none;
-}
-
-#last-prompt {
-	display: none;
-}
-
-#last-cursor {
-	display: none;
-}
-
-#github {
-	display: none;
-}
-
-#linkedin {
-	display: none;
-}
-
-#resume {
-	display: none;
-}
-
-.socials {
-	font-size: 1rem;
-}
-
-/* unvisited link */
-.socials a:link {
-	color: rgb(62, 199, 181);
-}
-
-/* visited link */
-.socials a:visited {
-	color: rgb(62, 199, 181);
-}
-
-/* mouse over link */
-.socials a:hover {
-	color: lightgray;
-}
-
-/* selected link */
-.socials a:active {
-	color: lightgray;
+#menu-icon {
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
 }
