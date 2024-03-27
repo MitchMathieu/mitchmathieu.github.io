@@ -7,7 +7,7 @@ body {
 	color: white;
 }
 
-#nav-bar {
+.nav-bar {
 	background-color: #6b6b6b;
 	color: #c7c7c7;
 	width: 100%;
@@ -24,6 +24,28 @@ body {
 	z-index: 100;
 	display: flex;
 	align-items: center;
+}
+
+.nav-bar ul {
+	list-style-type: none;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
+
+.nav-bar li {
+	float: left;
+	margin-right: 10px;
+	font-size: 0.9rem;
+}
+
+.nav-bar li:hover {
+	background-color: #7b7b7b;
+}
+
+.nav-bar a {
+	color: #c7c7c7;
+	text-decoration: none;
 }
 
 #app-name {
@@ -43,39 +65,5 @@ body {
 }
 
 #main-menu-icon {
-	margin-left: 10px;
-}
-
-.dropdown-menu {
-	display: none;
-	position: absolute;
-	left: 0;
-	top: 100%;
-	background-color: #6b6b6b;
-	min-width: 100px;
-	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-	z-index: 101;
-}
-
-.dropdown-menu a {
-	color: #c7c7c7;
-	padding: 2px 10px;
-	text-decoration: none;
-	display: block;
-	text-align: left;
-}
-
-.dropdown-menu a:hover {
-	background-color: #7b7b7b;
-}
-
-.menu-option {
-	display: inline;
-	text-align: left;
-	margin-right: 10px;
-}
-
-#social-menu {
-	margin-left: 27px;
-	font-size: 0.8rem;
+	margin-left: 5px;
 }
