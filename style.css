@@ -7,12 +7,12 @@ body {
 	color: white;
 }
 
-#app-bar {
+#nav-bar {
 	background-color: #6b6b6b;
 	color: #c7c7c7;
 	width: 100%;
-	height: 20px;
-	line-height: 20px;
+	height: 25px;
+	line-height: 25px;
 	padding: 0;
 	position: fixed;
 	top: 0;
@@ -20,23 +20,30 @@ body {
 	text-align: center;
 	font-family: sans-serif;
 	font-weight: bold;
-	font-size: 0.8rem;
+	font-size: 1rem;
 	z-index: 100;
+	display: flex;
+	align-items: center;
 }
 
 #app-name {
 	display: inline;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 #terminal {
 	margin-top: 20px;
+	font-size: 2rem;
 }
 
-#menu-icon {
-	position: absolute;
-	left: 10px;
-	top: 50%;
-	transform: translateY(-50%);
+.terminal .prompt {
+	color: rgb(21, 173, 21);
+}
+
+#main-menu-icon {
+	margin-left: 10px;
 }
 
 .dropdown-menu {
@@ -60,4 +67,15 @@ body {
 
 .dropdown-menu a:hover {
 	background-color: #7b7b7b;
+}
+
+.menu-option {
+	display: inline;
+	text-align: left;
+	margin-right: 10px;
+}
+
+#social-menu {
+	margin-left: 27px;
+	font-size: 0.8rem;
 }
