@@ -39,7 +39,7 @@ body {
 	font-size: 0.9rem;
 }
 
-.nav-bar li:hover {
+.nav-bar li:not(#main-menu-icon):hover {
 	background-color: #7b7b7b;
 }
 

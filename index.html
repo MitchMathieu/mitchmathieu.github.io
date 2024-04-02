@@ -22,39 +22,17 @@
 <body>
     <nav class="nav-bar">
         <ul>
-            <li><i class="fa-solid fa-mug-hot menu-option" id="main-menu-icon"></i></li>
+            <li id="main-menu-icon"><i class="fa-solid fa-mug-hot menu-option"></i></li>
             <li><a id="linkedin" href="https://www.linkedin.com/in/mitchmathieu/" target="_blank">LinkedIn</a></li>
             <li><a id="github" href="https://github.com/MitchMathieu" target="_blank">GitHub</a></li>
             <li><a id="resume" href="mitchell-mathieu-resume.pdf" target="_blank">Resume</a></li>
             <li><a href="">Help</a></li>
         </ul>
         <p id="app-name">Mitch's PC -bash</p>
-
     </nav>
 
     <div id="terminal"></div>
-    <script>
-        $('#terminal').terminal(function (command) {
-            if (command !== '') {
-                try {
-                    var result = window.eval(command);
-                    if (result !== undefined) {
-                        this.echo(new String(result));
-                    }
-                } catch (e) {
-                    this.error(new String(e));
-                }
-            } else {
-                this.echo('');
-            }
-        }, {
-            greetings: 'Mitch Mathieu - software developer',
-            name: 'mitchs-pc',
-            height: 500,
-            prompt: 'mitchmathieu$ '
-        });
-    </script>
-
+    <script src="terminal.js"></script>
     <script src="script.js"></script>
 </body>
 
