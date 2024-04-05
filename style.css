@@ -67,3 +67,8 @@ body {
 #main-menu-icon {
 	margin-left: 5px;
 }
+
+:root {
+	--size: 1.6;
+	/* --background: #031e11; */
+}
