@@ -26,12 +26,21 @@ $('#terminal').terminal({
     },
     figlet: function (...args) {
         return generateAsciiArt(args.join(' '));
+    },
+    show: function (fileName) {
+        showImage(fileName, this);
+    },
+    help: function () {
+        var availableCommands = ['greet', 'date', 'ls', 'cd <dir>', 'pwd', 'pcd', 'figlet <text>', 'show <image link>', 'help'];
+        this.echo('Available commands:\n-' + availableCommands.join('\n-'));
     }
 }, {
     onInit() {
         this.echo(generateAsciiArt("MITCHS PC"));
         this.echo(buildGreetingString);
-        goToRootDirectory();
+        goToRootDirectory((newDirectory) => {
+            this.set_prompt(`(base) ${newDirectory}$ `);
+        });
     },
     checkArity: false,
     greetings: false,
@@ -40,12 +49,19 @@ $('#terminal').terminal({
 }
 );
 
-function goToRootDirectory() {
+function showImage(fileName, terminal) {
+    terminal.echo($(`<img src="${currentDirectory}/${fileName}" />`));
+}
+
+function goToRootDirectory(callback) {
     $.ajax({
         url: `${serverBaseUrl}/go-to-root-directory`,
         method: 'GET',
         success: (newDirectory) => {
             currentDirectory = newDirectory;
+            if (typeof callback === 'function') {
+                return callback(newDirectory);
+            }
         },
         error: (jqXHR, textStatus, errorThrown) => {
             terminal.error('An error occurred: ' + textStatus);
@@ -57,7 +73,6 @@ function buildGreetingString() {
     var lines = [];
     lines.push(new Date().toLocaleString());
     lines.push("The default interactive shell is now Mosh (Mitch's Own SHell).");
-    // lines.push("(If this doesn't seem fun to you, the links above will get you to the essentials)");
     return lines.join('\n');
 }
 
@@ -75,6 +90,9 @@ function listDirectoriesAndFiles(terminal) {
 }
 
 function changeDirectory(directory, callback) {
+    if (directory === undefined) {
+        return goToRootDirectory();
+    }
     $.ajax({
         url: `${serverBaseUrl}/change-directory`,
         data: { directory: directory },
