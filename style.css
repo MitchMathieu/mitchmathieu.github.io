@@ -35,12 +35,14 @@ body {
 
 .nav-bar li {
 	float: left;
-	margin-right: 10px;
+	margin: 5px 0;
+	padding: 0 10px;
 	font-size: 0.9rem;
 }
 
 .nav-bar li:not(#main-menu-icon):hover {
-	background-color: #7b7b7b;
+	background-color: #cccccc;
+	border-radius: 5px;
 }
 
 .nav-bar a {
