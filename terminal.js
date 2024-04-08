@@ -29,7 +29,7 @@ $('#terminal').terminal({
     }
 }, {
     onInit() {
-        this.echo(generateAsciiArt('Mitch Mathieu'));
+        this.echo(generateAsciiArt("MITCHS PC"));
         this.echo(buildGreetingString);
         goToRootDirectory();
     },
