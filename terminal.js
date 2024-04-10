@@ -13,7 +13,7 @@ $('#terminal').terminal({
         return listDirectoriesAndFiles(this);
     },
     cd: function (directory) {
-        changeDirectory(directory, (newDirectory) => {
+        changeDirectory(directory, this, (newDirectory) => {
             this.set_prompt(`(base) ${newDirectory}$ `);
         });
         return;
@@ -33,6 +33,9 @@ $('#terminal').terminal({
     help: function () {
         var availableCommands = ['greet', 'date', 'ls', 'cd <dir>', 'pwd', 'pcd', 'figlet <text>', 'show <image link>', 'help'];
         this.echo('Available commands:\n-' + availableCommands.join('\n-'));
+    },
+    rm: function () {
+        this.error('You do not have permission to do that.');
     }
 }, {
     onInit() {
@@ -105,7 +108,7 @@ function listDirectoriesAndFiles(terminal) {
     });
 }
 
-function changeDirectory(directory, callback) {
+function changeDirectory(directory, terminal, callback) {
     if (directory === undefined) {
         return goToRootDirectory();
     }
@@ -120,7 +123,7 @@ function changeDirectory(directory, callback) {
             }
         },
         error: (jqXHR, textStatus, errorThrown) => {
-            terminal.error('An error occurred: ' + textStatus);
+            terminal.error('error: ' + jqXHR.responseText);
         }
     });
 }

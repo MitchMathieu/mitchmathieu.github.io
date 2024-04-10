@@ -69,7 +69,7 @@ app.get('/change-directory', (req, res) => {
         const newDirectory = `${currentDirectory}/${directory}`;
         fs.stat(newDirectory, (err, stats) => {
             if (err || !stats.isDirectory()) {
-                res.status(400).send('Invalid directory');
+                res.status(400).send(`Invalid directory '${directory}'`);
             } else {
                 currentDirectory = newDirectory;
                 res.send(currentDirectory);
