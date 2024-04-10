@@ -1,0 +1,32 @@
+{
+  "name": "terminal-website",
+  "version": "1.0.0",
+  "description": "A command prompt style website, containing information about me.",
+  "exports": "./server.js",
+  "type": "module",
+  "endgines": {
+    "node": ">=16"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "figlet": "^1.7.0",
+    "file-type": "^19.0.0",
+    "read-chunk": "^3.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MitchMathieu/mitchmathieu.github.io.git"
+  },
+  "author": "Mitch Mathieu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MitchMathieu/mitchmathieu.github.io/issues"
+  },
+  "homepage": "https://github.com/MitchMathieu/mitchmathieu.github.io#readme"
+}

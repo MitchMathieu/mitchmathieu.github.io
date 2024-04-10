@@ -50,7 +50,22 @@ $('#terminal').terminal({
 );
 
 function showImage(fileName, terminal) {
-    terminal.echo($(`<img src="${currentDirectory}/${fileName}" />`));
+    const filePath = `${currentDirectory}/${fileName}`;
+    $.ajax({
+        url: `${serverBaseUrl}/get-file-type`,
+        data: { filepath: filePath },
+        method: 'GET',
+        success: (fileType) => {
+            if (fileType.mime.startsWith('image/')) {
+                terminal.echo($(`<img src="${currentDirectory}/${fileName}" />`));
+            } else {
+                terminal.error('cannot show non-image files');
+            }
+        },
+        error: (jqXHR, textStatus, errorThrown) => {
+            terminal.error('Cannot show that item.');
+        }
+    });
 }
 
 function goToRootDirectory(callback) {
@@ -81,6 +96,7 @@ function listDirectoriesAndFiles(terminal) {
         url: `${serverBaseUrl}/list-files`,
         method: 'GET',
         success: (files) => {
+            files = files.filter(file => !file.startsWith('.'));
             terminal.echo(files.join('\n'));
         },
         error: (jqXHR, textStatus, errorThrown) => {

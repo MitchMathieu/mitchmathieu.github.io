@@ -1,7 +1,8 @@
-const express = require('express');
-const fs = require('fs');
-const cors = require('cors');
-const figlet = require('figlet');
+import express from 'express';
+import fs from 'fs';
+import cors from 'cors';
+import figlet from 'figlet';
+import { fileTypeFromFile } from 'file-type';
 
 const rootDirectory = 'mitchmathieu';
 var currentDirectory = 'mitchmathieu';
@@ -19,6 +20,16 @@ app.get('/list-files', (req, res) => {
             res.json(files);
         }
     });
+});
+
+app.get('/get-file-type', async (req, res) => {
+    const filePath = req.query.filepath;
+    try {
+        const fileType = await fileTypeFromFile(filePath);
+        res.send(fileType);
+    } catch (error) {
+        res.status(500).send('An error occurred: ' + error.message);
+    }
 });
 
 app.get('/generate-ascii', (req, res) => {
