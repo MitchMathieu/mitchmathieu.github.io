@@ -3,9 +3,6 @@ var currentDirectory = 'mitchmathieu';
 var count = 0;
 
 $('#terminal').terminal({
-    greet: function () {
-        return 'Hello, user!';
-    },
     date: function () {
         return new Date().toLocaleString();
     },
@@ -31,7 +28,7 @@ $('#terminal').terminal({
         showImage(fileName, this);
     },
     help: function () {
-        var availableCommands = ['greet', 'date', 'ls', 'cd <dir>', 'pwd', 'pcd', 'figlet <text>', 'show <image link>', 'help'];
+        var availableCommands = ['date', 'ls', 'cd <dir>', 'pwd', 'pcd', 'figlet <text>', 'show <image link>', 'help'];
         this.echo('Available commands:\n-' + availableCommands.join('\n-'));
     },
     rm: function () {
@@ -78,7 +75,7 @@ function goToRootDirectory(callback) {
         success: (newDirectory) => {
             currentDirectory = newDirectory;
             if (typeof callback === 'function') {
-                return callback(newDirectory);
+                callback(newDirectory);
             }
         },
         error: (jqXHR, textStatus, errorThrown) => {
@@ -110,22 +107,24 @@ function listDirectoriesAndFiles(terminal) {
 
 function changeDirectory(directory, terminal, callback) {
     if (directory === undefined) {
-        return goToRootDirectory();
+        goToRootDirectory(callback);
     }
-    $.ajax({
-        url: `${serverBaseUrl}/change-directory`,
-        data: { directory: directory },
-        method: 'GET',
-        success: (newDirectory) => {
-            currentDirectory = newDirectory;
-            if (typeof callback === 'function') {
-                callback(newDirectory);
+    else {
+        $.ajax({
+            url: `${serverBaseUrl}/change-directory`,
+            data: { directory: directory },
+            method: 'GET',
+            success: (newDirectory) => {
+                currentDirectory = newDirectory;
+                if (typeof callback === 'function') {
+                    callback(newDirectory);
+                }
+            },
+            error: (jqXHR, textStatus, errorThrown) => {
+                terminal.error('error: ' + jqXHR.responseText);
             }
-        },
-        error: (jqXHR, textStatus, errorThrown) => {
-            terminal.error('error: ' + jqXHR.responseText);
-        }
-    });
+        });
+    }
 }
 
 function generateAsciiArt(text) {
