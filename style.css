@@ -74,3 +74,8 @@ body {
 	--size: 1.6;
 	/* --background: #031e11; */
 }
+
+.scaled-image {
+	height: 500px;
+	width: auto;
+}
