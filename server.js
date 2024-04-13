@@ -11,6 +11,22 @@ const app = express();
 
 app.use(cors());
 
+app.get('/read-file', (req, res) => {
+    const filePath = req.query.filepath
+    // check if file has .txt extension
+    if (!filePath.endsWith('.txt')) {
+        res.status(400).send('Cannot read files that are not .txt files');
+        return;
+    }
+    fs.readFile(filePath, 'utf8', (err, data) => {
+        if (err) {
+            res.status(500).send('An error occurred');
+        } else {
+            res.send(data);
+        }
+    });
+});
+
 app.get('/list-files', (req, res) => {
     const dirPath = currentDirectory;
     fs.readdir(dirPath, (err, files) => {
