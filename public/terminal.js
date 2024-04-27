@@ -1,4 +1,6 @@
 var serverBaseUrl = 'http://localhost:3000';
+// var serverBaseUrl = 'https://mitchmathieu.azurewebsites.net/';
+const rootDirectory = 'mitchmathieu';
 var currentDirectory = 'mitchmathieu';
 var count = 0;
 
@@ -123,19 +125,10 @@ function showImage(fileName, terminal) {
 }
 
 function goToRootDirectory(callback) {
-    $.ajax({
-        url: `${serverBaseUrl}/go-to-root-directory`,
-        method: 'GET',
-        success: (newDirectory) => {
-            currentDirectory = newDirectory;
-            if (typeof callback === 'function') {
-                callback(newDirectory);
-            }
-        },
-        error: (jqXHR, textStatus, errorThrown) => {
-            terminal.error('An error occurred: ' + textStatus);
-        }
-    });
+    currentDirectory = rootDirectory;
+    if (typeof callback === 'function') {
+        callback(currentDirectory);
+    }
 }
 
 function buildGreetingString() {
@@ -150,6 +143,7 @@ function listDirectoriesAndFiles(terminal) {
     $.ajax({
         url: `${serverBaseUrl}/list-files`,
         method: 'GET',
+        data: { directory: currentDirectory },
         success: (files) => {
             files = files.filter(file => !file.startsWith('.'));
             terminal.echo(files.join('\n'));
@@ -160,14 +154,14 @@ function listDirectoriesAndFiles(terminal) {
     });
 }
 
-function changeDirectory(directory, terminal, callback) {
-    if (directory === undefined) {
+function changeDirectory(targetDirectory, terminal, callback) {
+    if (targetDirectory === undefined) {
         goToRootDirectory(callback);
     }
     else {
         $.ajax({
             url: `${serverBaseUrl}/change-directory`,
-            data: { directory: directory },
+            data: { currentDirectory: currentDirectory, targetDirectory: targetDirectory },
             method: 'GET',
             success: (newDirectory) => {
                 currentDirectory = newDirectory;
@@ -199,14 +193,5 @@ function generateAsciiArt(text) {
 }
 
 function printWorkingDirectory(terminal) {
-    $.ajax({
-        url: `${serverBaseUrl}/pwd`,
-        method: 'GET',
-        success: (directory) => {
-            terminal.echo('/Users/' + directory);
-        },
-        error: (jqXHR, textStatus, errorThrown) => {
-            terminal.error('An error occurred: ' + textStatus);
-        }
-    });
+    terminal.echo(currentDirectory);
 }
