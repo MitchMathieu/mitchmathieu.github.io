@@ -5,7 +5,7 @@ import figlet from 'figlet';
 import { fileTypeFromFile } from 'file-type';
 
 const rootDirectory = 'public/';
-const lastAccessibleDirectory = 'mitchmathieu';
+const lastAccessibleDirectory = 'users';
 
 const app = express();
 
@@ -32,7 +32,7 @@ app.get('/change-directory', (req, res) => {
     const targetDirectory = req.query.targetDirectory;
     if (targetDirectory === '..') {
         if (currentDirectory === lastAccessibleDirectory) {
-            res.status(400).send('Cannot go back');
+            res.status(400).send('This is the root directory.');
             return;
         }
         var parts = currentDirectory.split('/');

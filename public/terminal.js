@@ -1,7 +1,7 @@
 var serverBaseUrl = 'http://localhost:3000';
 // var serverBaseUrl = 'https://mitchmathieu.azurewebsites.net/';
-const rootDirectory = 'mitchmathieu';
-var currentDirectory = 'mitchmathieu';
+const rootDirectory = 'users/mitchmathieu';
+var currentDirectory = 'users/mitchmathieu';
 var count = 0;
 
 $('#terminal').terminal({
