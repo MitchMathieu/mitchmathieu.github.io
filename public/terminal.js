@@ -1,5 +1,5 @@
-var serverBaseUrl = 'http://localhost:3000';
-// var serverBaseUrl = 'https://mitchmathieu.azurewebsites.net/';
+// var serverBaseUrl = 'http://localhost:3000';
+var serverBaseUrl = 'https://mitchmathieu.azurewebsites.net/';
 const rootDirectory = 'users/mitchmathieu';
 var currentDirectory = 'users/mitchmathieu';
 var count = 0;
@@ -19,9 +19,6 @@ $('#terminal').terminal({
     },
     pwd: function () {
         return printWorkingDirectory(this);
-    },
-    pcd: function () {
-        this.echo(currentDirectory);
     },
     figlet: function (...args) {
         return generateAsciiArt(args.join(' '));
@@ -69,8 +66,8 @@ function helpCommands(terminal) {
     availableCommands.push("[[;green;]pwd]: print the current working directory");
     availableCommands.push("[[;green;]figlet <text>]: generate ASCII art from <text>");
     availableCommands.push("[[;green;]show <fileName>]: display an image file");
-    availableCommands.push("[[;green;]help]: display this help message");
     availableCommands.push("[[;green;]read <fileName>.txt]: read a text file");
+    availableCommands.push("[[;green;]help]: display this help message");
     availableCommands.push("");
     terminal.echo(availableCommands.join('\n'));
 }
@@ -134,7 +131,7 @@ function goToRootDirectory(callback) {
 function buildGreetingString() {
     var lines = [];
     lines.push(new Date().toLocaleString());
-    lines.push("The default interactive shell is now Mosh (Mitch's Own SHell).");
+    // lines.push("The default interactive shell is now Mosh (Mitch's Own SHell).");
     lines.push("Type 'help' and press enter to see a list of available commands.");
     return lines.join('\n');
 }
