@@ -60,13 +60,15 @@ function helpCommands(terminal) {
     var availableCommands = [];
     availableCommands.push("");
     availableCommands.push("--Available Commands--");
-    availableCommands.push("[[;green;]date]: display the current date and time");
     availableCommands.push("[[;green;]ls]: list files and directories in the current directory");
+    availableCommands.push("[[;green;]cd]: go to the root directory");
     availableCommands.push("[[;green;]cd <dir>]: change directory to <dir>");
-    availableCommands.push("[[;green;]pwd]: print the current working directory");
-    availableCommands.push("[[;green;]figlet <text>]: generate ASCII art from <text>");
+    availableCommands.push("[[;green;]cd ..]: go to the parent directory of the current directory");
+    availableCommands.push("[[;green;]pwd]: print the path of the current working directory");
     availableCommands.push("[[;green;]show <fileName>]: display an image file");
     availableCommands.push("[[;green;]read <fileName>.txt]: read a text file");
+    availableCommands.push("[[;green;]date]: display the current date and time");
+    availableCommands.push("[[;green;]figlet <text>]: generate ASCII art from <text>");
     availableCommands.push("[[;green;]help]: display this help message");
     availableCommands.push("");
     terminal.echo(availableCommands.join('\n'));
