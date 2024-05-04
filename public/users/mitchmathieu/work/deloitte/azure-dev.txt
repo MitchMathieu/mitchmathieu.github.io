@@ -1,0 +1,2 @@
+In my current role at Deloitte, I am an Azure developer focused on deploying event-driven, serverless solutions to the cloud. I help manage our client’s integration layer, managing and responding to incidents, performing enhancements to existing processes, and building new functionality.
+Some of my accomplishments in this role include improving the client’s product update process, which resulted in weekly savings of $50,000, and developing an automated process for handling a frequent business error, saving our team work hours each week.

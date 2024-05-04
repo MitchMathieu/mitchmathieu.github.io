@@ -1,0 +1,3 @@
+In my first role at Deloitte, I worked as an RPA developer with the Omnia AI intelligent automation team. I used tools built on C# and .NET to build automated processes for a large Canadian bank.
+Each bot followed a three-layer architecture: the control layer, which handled high-level functionality like start-up, shut-down, and case management; the process layers, which logically separated processing steps based on application requirements; and the adapter layers, which directly interfaced with the applications.
+I built five bots during my time on this project, cumulatively saving the bank 100s of hours of work per week.

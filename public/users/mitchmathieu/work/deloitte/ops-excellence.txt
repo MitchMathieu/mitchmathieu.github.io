@@ -1,0 +1,1 @@
+I have a penchant for operational excellence, which has helped my teams deliver higher-quality software more effectively. I have instituted peer code review systems, QA-handoff requirements, developer guides, and style guides to align our developers and orient them toward better practices.
